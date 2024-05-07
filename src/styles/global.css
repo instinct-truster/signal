@@ -1,0 +1,445 @@
+@font-face {
+  font-display: swap;
+  font-family: "Chivo";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/chivo-v18-latin-regular.woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Hacked";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/Hacked-KerX.ttf");
+}
+
+:root {
+  --bg: #191919;
+  --bgSoft: #7c7c7c;
+  --text: #ffffff;
+  --textSoft: #e0e0e0;
+  --halo-glow: #ffffff;
+  scrollbar-color: grey #232323;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: "Chivo";
+  transition: 1s all;
+}
+
+body.light {
+  --bg: #ffffff;
+  --text: #191919;
+  --halo-glow: #d6bc2a;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.container {
+  max-width: 1366px;
+  padding-left: 50px;
+  padding-right: 50px;
+  margin: auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* NAVBAR BEGIN */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  position: sticky;
+  top: 0;
+  background-color: var(--bg);
+  transition: background-color 1s;
+}
+
+.logo {
+  font-family: "Hacked";
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 32px;
+}
+
+.logo > a {
+  display: flex;
+  align-items: center;
+}
+
+.signal-focused-logo {
+  height: 36px;
+  width: 36px;
+  margin-left: 20px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 6px 2px #f8740f;
+}
+
+.links > a {
+  display: flex;
+  align-items: center;
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 2px solid #f8740f;
+}
+
+/* NAVBAR END */
+
+/* FOOTER BEGIN */
+
+.footer {
+  display: flex;
+  align-items: center;
+  height: 100px;
+  font-size: 14px;
+  justify-content: space-between;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.jesus-image,
+.usa-image {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 9px 4px var(--halo-glow);
+  animation: glow 3s linear infinite alternate;
+}
+
+@keyframes glow {
+  to {
+    box-shadow: 0px 0px 7px 7px var(--halo-glow);
+  }
+}
+
+.site-map {
+  color: #f8740f;
+}
+
+/* FOOTER END */
+
+/* LIST BEGIN */
+
+.list {
+  margin-top: 20px;
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  margin-bottom: 50px;
+}
+
+.listItemImage {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid #f8740f;
+}
+
+.listItemTitle {
+  text-align: center;
+  border-bottom: 2px solid #f8740f;
+  padding-bottom: 5px;
+}
+
+.listItemText {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.listItemDetail {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.listItemAvatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid gray;
+}
+
+.author {
+  color: orangered;
+}
+
+.listItemCategories {
+  display: flex;
+  gap: 10px;
+}
+
+.listItemCategory {
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #a55b40;
+  color: white;
+  font-size: 14px;
+}
+
+.pagination {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  margin-top: 80px;
+  margin-bottom: 30px;
+}
+
+.page-item {
+  border: 2px solid gray;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.page-item.active {
+  background-color: var(--text);
+  color: var(--bg);
+}
+
+.page-item.disabled {
+  background-color: var(--bgSoft);
+  cursor: not-allowed;
+}
+
+/* LIST END */
+
+/* SINGLE BEGIN */
+
+.singleHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.singleHeadText {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+}
+
+.singleHeadTitle {
+  text-align: center;
+  font-size: 36px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #f8740f;
+}
+
+.singleHeadDetail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.singleAvatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid gray;
+  object-fit: cover;
+}
+
+.singleCategory {
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #7a3f2a;
+  color: white;
+  font-size: 14px;
+}
+
+.singleBottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  margin-top: 50px;
+}
+
+.singleContent {
+  flex: 9;
+  font-size: 20px;
+  line-height: 32px;
+}
+
+.singleContent p,
+.singleContent h1,
+.singleContent h2,
+.singleContent h3 {
+  margin: 20px 0px;
+}
+
+.singleContent img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.singleContent a {
+  color: #f8740f;
+}
+
+.singleRightBar {
+  flex: 1;
+}
+
+/* SINGLE END */
+
+/* RIGHTBAR BEGIN */
+
+.rightBar {
+  position: sticky;
+  top: 100px;
+}
+
+/* Can add another horizontal image ad and display none when at some media sizes, and then display at other sizes. */
+
+.rightBarImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* RIGHTBAR END */
+
+/* CATEGORIES BEGIN */
+
+.categories {
+  padding: 5px 10px;
+  background-color: var(--bgSoft);
+  color: var(--textSoft);
+  border-radius: 5px;
+}
+
+/* CATEGORIES END */
+
+@media (max-width: 1536px) {
+  .container {
+    max-width: 1366px;
+  }
+}
+@media (max-width: 1366px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+@media (max-width: 1280px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+@media (max-width: 1024px) {
+  .container {
+    max-width: 768px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .listItemImage {
+    height: 300px;
+    width: 300px;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    max-width: 640px;
+  }
+  .links {
+    font-size: 14px;
+  }
+  .listItemImage {
+    height: 200px;
+    width: 200px;
+  }
+}
+@media (max-width: 640px) {
+  .container {
+    max-width: 475px;
+  }
+  .searchButton span,
+  .rightBarImage,
+  .social,
+  .links {
+    display: none;
+  }
+  .navbar {
+    justify-content: center;
+  }
+
+  .listItem {
+    flex-direction: column;
+  }
+  .navbar {
+    height: 70px;
+  }
+
+  .singleContent {
+    flex: 30;
+  }
+
+  .footer {
+    font-size: 11px;
+  }
+
+  .jesus-image,
+  .usa-image {
+    height: 30px;
+    width: 30px;
+  }
+}
